@@ -54,8 +54,3 @@ Once both terminals cross-connect, they will automatically run a cryptographic h
 
 
 ---
-
-### 2. `CHECKPOINT1.md`
-*This file covers your initial baseline setup and the asynchronous network challenges faced.*
-
-```markdown
