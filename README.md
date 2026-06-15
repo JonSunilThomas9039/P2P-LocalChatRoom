@@ -4,7 +4,7 @@ A proof-of-concept, serverless, end-to-end encrypted (E2EE) messaging applicatio
 
 This project demonstrates how two distinct computer nodes can dynamically discover each other, negotiate encryption keys over an insecure channel, frame their transmission data, and maintain a protected chat stream without a central database or server intermediate.
 
-![Alternative text description](Screenshot from 2026-06015 11-0.png)
+![Alternative text description](Screenshot from 2026-06015 11-02.19.png)
 
 ## 📁 Repository Structure
 
