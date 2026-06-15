@@ -33,8 +33,4 @@ During development, several critical socket crashes and thread failures were enc
 * **The Problem:** Nodes ran side-by-side frequently tripped over immediate crashes: `OSError: [Errno 107] Transport endpoint is not connected` or `BrokenPipeError: [Errno 32] Broken pipe`.
 * **The Cause:** The script relied on a local check (`while client1 is None or client2 is None:`) to verify connections. The microsecond the operating system kernel finished the TCP 3-way handshake, the local variables filled up and the script immediately sent data. However, the *remote* computer's Python application layer was a few CPU cycles behind its kernel and hadn't yet returned the fully formed socket object from `accept()`. Data arrived at an uninitialized application door, collapsing the pipe.
 * **The Resolution:** Implemented a mandatory application-layer synchronization gate. Both nodes are now forced to exchange explicit state updates and confirm they are listening before any handshake math can proceed.
-
-3. CHECKPOINT2.md
-
-This file outlines the implementation of your cryptography pipeline and stream framing layout.
-Markdown
+---
